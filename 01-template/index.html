@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>0x-Template</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app-1">
+            <span>Message: {{msg}}</span>
+            <br>
+            <p>Using matches: {{rawHtml}}</p>
+            <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+            <br>
+            <button v-bind:disabled="isButtonDisabled">Button是否不可用</button>
+            <br>
+            <span>ok or not?: {{ok ? 'YES' : 'NO'}}</span>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>

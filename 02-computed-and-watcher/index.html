@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Computed</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    </head>
+    <body>
+        <div id="app-1">
+            <p>Origin message: {{message}}</p>
+            <p>Computed reversed message: {{reversedMessage}}</p>
+        </div>
+        <br>
+        <div id="app-2">
+            <p>First Name:</p>
+            <input v-model="firstName">
+            <p>Last Name:</p>
+            <input v-model="lastName">
+            <p>Full Name:</p>
+            <span>{{fullName}}</span>
+        </div>
+        <br>
+        <div id="app-3">
+            <p>Ask a yes/no question:
+                <input v-model="question">
+            </p>
+            <p>{{answer}}</p>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
