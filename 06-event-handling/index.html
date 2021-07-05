@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>06 Event Handling</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app-1">
+            <button v-on:click="counter += 1">Add One</button>
+            <p>The button above has been clicked {{counter}} times.</p>
+        </div>
+        <br>
+        <div id="app-2">
+            <button v-on:click="greet">Greet</button>
+        </div>
+        <br>
+        <div id="app-3">
+            <button v-on:click="say('hi')">Say hi</button>
+            <button v-on:click="say('what')">Say what</button>
+        </div>
+        <br>
+        <div id="app-4">
+            <button v-on:click="warn('Form cannot be submitted yet.',$event)">
+                Submit
+            </button>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
