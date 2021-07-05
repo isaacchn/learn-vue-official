@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>05 List Rendering</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <ul id="app-1">
+            <li v-for="item in items" v-bind:key="item.message">
+                {{item.message}}
+            </li>
+        </ul>
+        <br>
+        <ul id="app-2">
+            <li v-for="(item,index) in items">
+                {{parentMessage}} - {{index}} - {{item.message}}
+            </li>
+        </ul>
+        <br>
+        <ul id="app-3">
+            <li v-for="value in object">
+                {{value}}
+            </li>
+            <li v-for="(value,name) in object">
+                {{name}} : {{value}}
+            </li>
+            <li v-for="(value,name,index) in object">
+                {{index}} : {{name}} : {{value}}
+            </li>
+        </ul>
+        <br>
+        <div id="app-4">
+            <ul v-for="set in sets">
+                <li v-for="n in even(set)">{{n}}</li>
+            </ul>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
