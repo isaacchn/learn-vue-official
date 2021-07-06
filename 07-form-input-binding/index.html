@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>07 Form Input Binding</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <!--基础用法-->
+        <div id="app-1">
+            <input v-model="message" placeholder="edit me">
+            <p>Message is: {{message}}</p>
+        </div>
+        <br>
+        <div id="app-2">
+            <span>Multiline message is:</span>
+            <p style="white-space: pre-line">{{message}}</p>
+            <br>
+            <textarea v-model="message" placeholder="add multiple lines"></textarea>
+        </div>
+        <br>
+        <div id="app-3">
+            <input type="checkbox" id="checkbox" v-model="checked">
+            <label for="checkbox">{{checked}}</label>
+        </div>
+        <br>
+        <div id="app-4">
+            <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+            <label for="jack">Jack</label>
+            <input type="checkbox" id="john" value="John" v-model="checkedNames">
+            <label for="john">John</label>
+            <br>
+            <span>CheckedNames: {{checkedNames}}</span>
+        </div>
+        <br>
+        <div id="app-5">
+            <input type="radio" id="one" value="One" v-model="picked">
+            <label for="one">One</label>
+            <input type="radio" id="two" value="Two" v-model="picked">
+            <label for="two">Two</label>
+            <br>
+            <span>Picked: {{ picked }}</span>
+        </div>
+        <br>
+        <div id="app-6">
+            <select v-model="selected">
+                <option disabled value="">请选择</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <span>Selected: {{ selected }}</span>
+        </div>
+        <br>
+        <div id="app-7">
+            <select v-model="selected" multiple style="width: 50px;">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <br>
+            <span>Selected: {{selected}}</span>
+        </div>
+        <br>
+        <div id="app-8">
+            <select v-model="selected">
+                <option v-for="option in options" v-bind:value="option.value">
+                    {{option.text}}
+                </option>
+            </select>
+            <span>Selected: {{selected}}</span>
+        </div>
+        <br>
+        <!--值绑定-->
+        <div id="app-9">
+            <input type="checkbox"
+                   v-model="toggled"
+                   true-value="yes"
+                   false-value="no">
+            <label>toggle it!</label>
+            <br>
+            <span>Toggled: {{toggled}}</span>
+        </div>
+        <br>
+        <div id="app-10">
+            <input type="radio" v-model="picked" v-bind:value="one_value">
+            <label>Button_1</label>
+            <input type="radio" v-model="picked" v-bind:value="another_value">
+            <label>Button_2</label>
+            <br>
+            <span>Picked Value: {{picked}}</span>
+        </div>
+        <br>
+        <div id="app-11">
+            <select v-model="selected">
+                <option v-bind:value="{number:123}">123</option>
+            </select>
+            <br>
+            <span>Selected: {{selected}}</span>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
