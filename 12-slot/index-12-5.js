@@ -1,8 +1,8 @@
-//独占默认插槽
+//解构插槽 Prop
 var CurrentUser = {
     template: `
     <span>
-        <slot v-bind:user-bind="userProp">{{userProp.lastName}}</slot>
+        <slot v-bind:whatever="userProp">{{userProp.lastName}}</slot>
     </span>
     `,
     props: ['userProp']
@@ -13,10 +13,9 @@ var app1 = new Vue({
         'current-user': CurrentUser
     },
     data: {
-        userData: {
+        user: {
             firstName: 'Jim',
             lastName: 'Green'
         }
     }
 })
-

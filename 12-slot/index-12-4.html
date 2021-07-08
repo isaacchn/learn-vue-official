@@ -6,13 +6,17 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     </head>
     <body>
-        <!--作用域插槽-->
+        <!--独占默认插槽-->
         <div id="app-1">
-            <current-user v-bind:user="userData"></current-user>
+            <current-user
+                    v-bind:user-prop="userData"
+                    v-slot:default="userData">
+                {{userData.userBind.firstName}}
+            </current-user>
             <br>
-            <current-user v-bind:user="userData">
+            <current-user v-bind:user-prop="userData">
                 <template v-slot:default="whatever">
-                    {{whatever.user.firstName}}
+                    {{whatever.userBind.firstName}}
                 </template>
             </current-user>
         </div>
