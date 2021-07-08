@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>12 Exclusive Slots</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <!--作用域插槽-->
+        <div id="app-1">
+            <current-user v-bind:user="userData"></current-user>
+            <br>
+            <current-user v-bind:user="userData">
+                <template v-slot:default="whatever">
+                    {{whatever.user.firstName}}
+                </template>
+            </current-user>
+        </div>
+        <script src="index-12-4.js"></script>
+    </body>
+</html>

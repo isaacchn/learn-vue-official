@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>12 Named Slots & Slot Scopes</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app-1">
+            <base-layout>
+                <template v-slot:header>
+                    <h1>Page Title.</h1>
+                </template>
+                <template v-slot:default>
+                    <p>Paragraph 1.</p>
+                    <p>Paragraph 2.</p>
+                </template>
+                <template v-slot:footer>
+                    <p>contract info</p>
+                </template>
+            </base-layout>
+        </div>
+        <br>
+        <!--作用域插槽-->
+        <div id="app-2">
+            <current-user v-bind:user="userData"></current-user>
+            <br>
+            <current-user v-bind:user="userData">
+                <template v-slot:default="whatever">
+                    {{whatever.user.firstName}}
+                </template>
+            </current-user>
+        </div>
+        <script src="index-12-2.js"></script>
+    </body>
+</html>

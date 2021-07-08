@@ -37,22 +37,35 @@ var BaseCheckbox = {
     <input 
             type="checkbox"
             v-bind:checked="checked"
-            v-on:change="$emit('change',$event.target.checked)"
+            v-on:change="$emit('input-change',$event.target.checked)"
             >
     `
 }
 var app1 = new Vue({
     el: '#app-1',
     components: {
-        'base-input': BaseInput,
         'base-checkbox': BaseCheckbox
     },
     data: {
         loginVue: true
     },
     methods: {
-        change: function (checked) {
+        "changed": function (checked) {
             console.log(checked)//未实现
+        }
+    }
+})
+var app2 = new Vue({
+    el: '#app-2',
+    components: {
+        'base-input': BaseInput
+    },
+    data: {
+        'label1': "LABEL"
+    },
+    methods: {
+        focused: function () {
+            console.log('focused')
         }
     }
 })
