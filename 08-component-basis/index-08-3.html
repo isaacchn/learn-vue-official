@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>08 Dynamic Components</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app-1">
+            <component v-bind:is="whichComp"></component>
+            <button v-on:click="chooseComp('a')">a</button>
+            <button v-on:click="chooseComp('b')">b</button>
+            <button v-on:click="chooseComp('c')">c</button>
+        </div>
+        <script src="index-08-3.js"></script>
+    </body>
+</html>
