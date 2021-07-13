@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>13 Dynamic Components Keepalive</title>
+        <title>13 Dynamic Components</title>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
         <style>
             .tab-button {
@@ -40,8 +40,6 @@
                 {{tab}}
             </button>
             <component v-bind:is="currentTabComponent" class="tab"></component>
-            <br>
-            <vertical-tab-posts v-bind:post-props="posts"></vertical-tab-posts>
         </div>
         <script src="index-13-1.js"></script>
     </body>
